@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="contactos.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1055"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Contactos" custom_title="0" dock_id="1" table="4,9:mainContactos"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011300ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">CREATE TABLE &quot;Contactos&quot; (
+	&quot;id&quot;	INTEGER NOT NULL,
+	&quot;nombre&quot;	TEXT,
+	&quot;telefono&quot;	TEXT,
+	PRIMARY KEY(&quot;id&quot; AUTOINCREMENT)
+);
+
+ALTER TABLE Contactos ADD email TEXT;
+ALTER TABLE Contactos ADD direccion TEXT;
+ALTER TABLE Contactos ADD fecha_nacimiento TEXT;
+
+INSERT INTO Contactos (nombre, telefono, email, direccion, fecha_nacimiento)
+VALUES(&quot;John Doe&quot;,&quot;1234567890&quot;,&quot;john.doe@example.com&quot;,&quot;123 Main Street&quot;,&quot;1990-05-15&quot;);
+INSERT INTO Contactos (nombre, telefono, email, direccion, fecha_nacimiento)
+VALUES(&quot;Jane Smith&quot;,&quot;9876543210&quot;,&quot;jane.smith@example.com&quot;,&quot;456 Elm Street&quot;,&quot;1985-09-20&quot;);
+INSERT INTO Contactos (nombre, telefono, email, direccion, fecha_nacimiento)
+VALUES(&quot;Bob Johnson&quot;,&quot;5551234567&quot;,&quot;bob.johnson@example.com&quot;,&quot;789 Oak Street&quot;,&quot;1978-12-01&quot;);
+INSERT INTO Contactos (nombre, telefono, email, direccion, fecha_nacimiento)
+VALUES(&quot;Alice Williams&quot;,&quot;3216549870&quot;,&quot;alice.williams@example.com&quot;,&quot;101 Maple Street&quot;,&quot;1992-07-11&quot;);
+INSERT INTO Contactos (nombre, telefono, email, direccion, fecha_nacimiento)
+VALUES(&quot;Michael Brown&quot;,&quot;6543217890&quot;,&quot;michael.brown@example.com&quot;,&quot;202 Pine Street&quot;,&quot;1988-03-25&quot;);
+
+SELECT * FROM Contactos
+WHERE nombre = &quot;John Doe&quot;;
+
+SELECT * FROM Contactos
+WHERE telefono like&quot;123%&quot;;
+
+SELECT * FROM Contactos
+ORDER BY fecha_nacimiento DESC;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
